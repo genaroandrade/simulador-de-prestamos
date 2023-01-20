@@ -1,0 +1,83 @@
+h1 { 
+font-size: 30px;
+text-align: center;}
+h2{
+    text-align: end;
+}
+p{font-size: 22px;}
+img{
+    align-items: center;
+}
+body{
+    background: url("http://imgfz.com/i/A6zt85O.jpeg") no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.85;
+}
+h1{
+    text-align: center;
+    font-family: 'arial';
+}
+label{
+    font-family: 'arial';
+    font-weight: bold;
+    
+
+}
+.form{
+    width: 950px;
+    margin: 0 auto;
+    margin-top: 100px;
+    border:  1px;
+}
+input{
+    width: 500px;
+    margin-bottom: 15px;
+    padding: 10px;
+    margin-right: -6px;
+    background-color: #fdfef7;
+    border: #242525 1.8px solid;
+}
+.selectorcuotas{
+    padding: 30px;
+    
+
+}
+.recuadro{
+    border: #1b1d1d 2px solid;
+    border-radius: 20px;
+    background-color: #9ea19a;
+    padding:20px;
+}
+button{
+    background-color: #fdfef7;
+    border: #173441 1.8px solid;
+    width: 100px;
+    font-family: 'arial';
+    font-size: 15px;  
+    border-radius: 2px;
+    padding: 10px;
+    margin-left:87%;
+}
+
+.tab{
+    border-collapse: collapse;
+    text-align: center;
+    font-family: 'arial';
+    background-color: #c4c6b9;
+    border: #151616 2px solid;
+    margin: 0 auto;
+    width: 900px;
+}
+thead{
+    border: #313333 2px solid;
+    font-weight: bold;
+}
+tr{
+    border: #202222 2px solid;
+}
+td{
+    border: #202222 2px solid;    
+}
+body.dark{
+    background :url(./imagen/CfqAzYmWcAEQxcO.jpg);
+}

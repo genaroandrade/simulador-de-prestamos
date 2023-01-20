@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="./js/script.js"></script>
+  </head>
+  <body id="color" class="list">
+    <footer>
+      <div class="form">
+        <div class="recuadro">
+            <h1>SIMULADOR DE PRESTAMO</h1>
+            <form>
+                <div>
+                    <label for="capital">MONTO DEL PRESTAMO 
+                        <input type="number" placeholder="Ingrese el monto prestado" id="capital">
+                        
+                    </label>
+                </div>
+                <div class = selectorcuotas>
+                    <label for="couta"> SELECTOR DE CUOTAS
+                        <select name="couta" id="couta">
+                            <option value="3">3</option>
+                            <option value="6">6</option>
+                            <option value="12">12</option>
+                        </select>
+                        
+                    </label>
+                </div>
+                <div>
+                    <label for="interes"> INTERES  % 
+                        <input type="text" id="interes" placeholder="Interes según la cuota" disabled>
+                    </label>
+                </div>
+            </form>
+        <button id="btnCalc" >CALCULO</button>
+        <button id="btnRestart" >REINICIAR</button>
+          </div>
+        <hr>
+        <table class="tab">
+            <thead>
+                <tr>
+                    <td>NRO</td>
+                    <td>CAPITAL</td>
+                    <td>INTERES</td>
+                    <td>IMPORTE TOTAL A PAGAR</td>
+                    
+                </tr>
+            </thead>
+            <tbody id="tab">
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td class="ft">TOTAL</td>
+                    <td ><p id="t1"></p></td>
+                    <td ><p id="t2"></p></td>
+                    <td ><p id="t3"></p></td>
+                
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div>
+
+    </div>
+    
+</body>
+
+</html>
+    
+    
+    
+  </body>
+</html>
