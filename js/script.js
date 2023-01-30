@@ -59,7 +59,6 @@ quotaInput.onchange = (element) => {
 //capturamos el boton de calculo
 const calculos = document.getElementById("btnCalc");
 const fondo = document.getElementById("color");
- 
 
 //capturamos los elementos de la tabla para mostrar totales
 const totCapital = document.getElementById("t1");
@@ -79,28 +78,57 @@ calculos.addEventListener("click", () => {
   ).toString();
 
   totAPagar.textContent = state.total.toString();
-  fondo.classList.toggle("dark")
-   
+  fondo.classList.toggle("dark");
 });
 
 const buttonRestart = document.getElementById("btnRestart");
 
+//reiniciamos el estado, y los valores de cada input y tabla
+
 buttonRestart.addEventListener("click", () => {
-  //reiniciamos el estado, y los valores de cada input y tabla
-  state = {
-    ...JSON.parse(localStorage.getItem("initial_state")),
-  };
-  loanAmountInput.value = null;
-
-  totCapital.textContent = "";
-
-  totInteres.textContent = "";
-
-  totAPagar.textContent = "";
-
-  quotaInput.value = "3";
-
-  interesInput.value = state.interest;
-
-  console.log("state", state);
+  setTimeout(() => {
+    state = {
+      ...JSON.parse(localStorage.getItem("initial_state")),
+    };
+  
+    loanAmountInput.value = null;
+  
+    totCapital.textContent = "";
+  
+    totInteres.textContent = "";
+  
+    totAPagar.textContent = "";
+  
+    quotaInput.value = "3";
+  
+    interesInput.value = state.interest;
+  
+    console.log("state", state);
+    
+  }, 1500);
+  
+  
+  // agregando libreria
+  let timerInterval;
+  Swal.fire({
+    title: "Reiniciando prestamo",
+    html: " En <b></b> Milisegundos.",
+    timer: 1500,
+    timerProgressBar: true,
+    didOpen: () => {
+      Swal.showLoading();
+      const b = Swal.getHtmlContainer().querySelector("b");
+      timerInterval = setInterval(() => {
+        b.textContent = Swal.getTimerLeft();
+      }, 100);
+    },
+    willClose: () => {
+      clearInterval(timerInterval);
+    },
+  }).then((result) => {
+    
+    if (result.dismiss === Swal.DismissReason.timer) {
+      
+    }
+  });
 });
