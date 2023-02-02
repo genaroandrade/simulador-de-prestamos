@@ -82,3 +82,10 @@ body.dark{
     background :url(./imagen/CfqAzYmWcAEQxcO.jpg);
 
 }
+.color{
+    font-size: 50px;
+    background-color: #c8c8c5;
+}
+.titulo{
+    color: brown;
+}

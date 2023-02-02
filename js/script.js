@@ -59,7 +59,7 @@ quotaInput.onchange = (element) => {
 //capturamos el boton de calculo
 const calculos = document.getElementById("btnCalc");
 const fondo = document.getElementById("color");
-
+const banco = document.querySelector("#databanco");
 //capturamos los elementos de la tabla para mostrar totales
 const totCapital = document.getElementById("t1");
 const totInteres = document.getElementById("t2");
@@ -90,24 +90,22 @@ buttonRestart.addEventListener("click", () => {
     state = {
       ...JSON.parse(localStorage.getItem("initial_state")),
     };
-  
+
     loanAmountInput.value = null;
-  
+
     totCapital.textContent = "";
-  
+
     totInteres.textContent = "";
-  
+
     totAPagar.textContent = "";
-  
+
     quotaInput.value = "3";
-  
+
     interesInput.value = state.interest;
+
   
-    console.log("state", state);
-    
   }, 1500);
-  
-  
+
   // agregando libreria
   let timerInterval;
   Swal.fire({
@@ -132,3 +130,18 @@ buttonRestart.addEventListener("click", () => {
     }
   });
 });
+
+fetch("https://api.estadisticasbcra.com/inflacion_interanual_oficial", {
+  headers: {
+    Authorization: "BEARER eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDY4ODM5NjAsInR5cGUiOiJleHRlcm5hbCIsInVzZXIiOiJqZXJleGFuZEBnbWFpbC5jb20ifQ.I90xWfDgVt5m96I-y4beWjAxM33nG9B09dEs4cPT38be0xKvssfaoagL_k2hBpDOv7oqVmHaAh0HhSNfYS94kw"
+  },
+})
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data)
+    data.forEach((info) => {
+      let content = document.createElement("div");
+      content.innerHTML = `<h4> Al mes : ${info.d} la inflacion es de ${info.v} </h4> `;
+      banco.append(content);
+    });
+  });
